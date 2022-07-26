@@ -43,7 +43,11 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                               func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg"),
                               func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                               func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
-                              ).join(Stg_Product).all()
+                              ).join(Stg_Product).filter(
+        Stg_Product.bu == product_term,
+        Stg_Product.segment != None,
+        Stg_Product.category != None,
+        Stg_Product.sub_category != None).all()
 
     data.append({
         "items": [],
@@ -65,7 +69,10 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                                       func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                                       func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
                                       ).join(Stg_Product).filter(
-                Stg_Product.segment == products_segment[i].segment).all()
+                Stg_Product.segment == products_segment[i].segment,
+                Stg_Product.bu == product_term,
+                Stg_Product.category != None,
+                Stg_Product.sub_category != None).all()
 
             data[0]['items'].append({
                 "items": [],
@@ -90,7 +97,9 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                                      func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                                      func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
                                      ).join(Stg_Product).filter(
-                Stg_Product.category == products_category[j].category).all()
+                Stg_Product.category == products_category[j].category,
+                Stg_Product.bu == product_term,
+                Stg_Product.sub_category != None).all()
 
             data[0]['items'][i]['items'].append({
                 "items": [],
@@ -115,7 +124,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                                          func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                                          func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
                                          ).join(Stg_Product).filter(
-                    Stg_Product.sub_category == product_sub_category[k].sub_category).all()
+                    Stg_Product.sub_category == product_sub_category[k].sub_category,
+                    Stg_Product.bu == product_term).all()
 
                 data[0]['items'][i]['items'][j]['items'].append({
                     "items": [],
