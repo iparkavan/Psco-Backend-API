@@ -35,7 +35,7 @@ async def root(product_term: str, db: Session = Depends(get_db)):
     # products = db.query(func.sum(Stg_Product.sales).label("sales_sum")).filter(Stg_Product.bu == product_term).all()
     products_segment = db.query(Stg_Product.segment).filter(Stg_Product.bu == product_term,
                                                             Stg_Product.segment != None).group_by(
-        Stg_Product.segment).all()
+                                                            Stg_Product.segment).all()
 
     sales_products = db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
                               func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
@@ -43,6 +43,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                               func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg"),
                               func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                               func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
+                              func.sum(Stg_SalesProduct.rom_sales_chg).label("rom_sales_chg"),
+                              func.sum(Stg_SalesProduct.segment_sales_share).label("segment_share"),
                               ).join(Stg_Product).filter(
         Stg_Product.bu == product_term,
         Stg_Product.segment != None,
@@ -58,6 +60,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
         "share_chg": sales_products[0].share_chg,
         "volume_mean": sales_products[0].volume_mean,
         "unit_mean": sales_products[0].unit_mean,
+        "rom_sales_chg": sales_products[0].rom_sales_chg,
+        "segment_share": sales_products[0].segment_share,
     })
 
     for i in range(len(products_segment)):
@@ -68,6 +72,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                                       func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg"),
                                       func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                                       func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
+                                      func.sum(Stg_SalesProduct.rom_sales_chg).label("rom_sales_chg"),
+                                      func.sum(Stg_SalesProduct.segment_sales_share).label("segment_share"),
                                       ).join(Stg_Product).filter(
                 Stg_Product.segment == products_segment[i].segment,
                 Stg_Product.bu == product_term,
@@ -83,6 +89,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                 "share_chg": sales_products[0].share_chg,
                 "volume_mean": sales_products[0].volume_mean,
                 "unit_mean": sales_products[0].unit_mean,
+                "rom_sales_chg": sales_products[0].rom_sales_chg,
+                "segment_share": sales_products[0].segment_share,
             })
 
         products_category = db.query(Stg_Product.category).filter(Stg_Product.segment == products_segment[i].segment,
@@ -96,6 +104,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                                      func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg"),
                                      func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                                      func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
+                                     func.sum(Stg_SalesProduct.rom_sales_chg).label("rom_sales_chg"),
+                                     func.sum(Stg_SalesProduct.segment_sales_share).label("segment_share"),
                                      ).join(Stg_Product).filter(
                 Stg_Product.category == products_category[j].category,
                 Stg_Product.bu == product_term,
@@ -110,6 +120,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                 "share_chg": sales_details[0].share_chg,
                 "volume_mean": sales_details[0].volume_mean,
                 "unit_mean": sales_details[0].unit_mean,
+                "rom_sales_chg": sales_details[0].rom_sales_chg,
+                "segment_share": sales_products[0].segment_share,
             })
 
             product_sub_category = db.query(Stg_Product.sub_category).filter(
@@ -123,6 +135,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                                          func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg"),
                                          func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
                                          func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
+                                         func.sum(Stg_SalesProduct.rom_sales_chg).label("rom_sales_chg"),
+                                         func.sum(Stg_SalesProduct.segment_sales_share).label("segment_share"),
                                          ).join(Stg_Product).filter(
                     Stg_Product.sub_category == product_sub_category[k].sub_category,
                     Stg_Product.bu == product_term).all()
@@ -136,6 +150,8 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                     "share_chg": sales_details[0].share_chg,
                     "volume_mean": sales_details[0].volume_mean,
                     "unit_mean": sales_details[0].unit_mean,
+                    "rom_sales_chg": sales_details[0].rom_sales_chg,
+                    "segment_share": sales_products[0].segment_share,
                 })
 
     return data

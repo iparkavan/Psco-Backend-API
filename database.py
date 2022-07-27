@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DB_CONN")
 
-engine = create_engine('postgresql+psycopg2://postgres:test%40123@localhost:5433/pepsico')
+engine = create_engine('postgresql+psycopg2://postgres:PostPark_@localhost:5432/Pepsico')
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()

@@ -37,6 +37,8 @@ class Stg_SalesProduct(Base):
     total_sales_chg = Column("Total Sales Chg %", DOUBLE_PRECISION)
     sales_share = Column("Sales Share", DOUBLE_PRECISION)
     sales_share_change_vs_ya = Column("Sales Share Change vs YA", DOUBLE_PRECISION)
+    segment_sales_share = Column("Segment Sales Share", DOUBLE_PRECISION)
+    Segment_Sales_Share_Change_vs_YA = Column("Segment Sales Share Change vs YA", DOUBLE_PRECISION)
     volume_chg = Column("Vol % Chg", DOUBLE_PRECISION)
     unit_chg = Column("Unit % Chg", DOUBLE_PRECISION)
     avg_item_per_store_chg = Column("Avg Item Per Store Chg %", DOUBLE_PRECISION)
