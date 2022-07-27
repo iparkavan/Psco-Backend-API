@@ -31,11 +31,15 @@ def get_db():
 @app.get("/getdata/{product_term}")
 async def root(product_term: str, db: Session = Depends(get_db)):
     data = []
-
-    # products = db.query(func.sum(Stg_Product.sales).label("sales_sum")).filter(Stg_Product.bu == product_term).all()
     products_segment = db.query(Stg_Product.segment).filter(Stg_Product.bu == product_term,
                                                             Stg_Product.segment != None).group_by(
         Stg_Product.segment).all()
+
+    sales_products_count = db.query(Stg_SalesProduct).join(Stg_Product).filter(
+        Stg_Product.bu == product_term,
+        Stg_Product.segment != None,
+        Stg_Product.category != None,
+        Stg_Product.sub_category != None).count()
 
     sales_products = db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
                               func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
@@ -52,22 +56,29 @@ async def root(product_term: str, db: Session = Depends(get_db)):
         Stg_Product.category != None,
         Stg_Product.sub_category != None).all()
 
+
     data.append({
         "items": [],
         "name": product_term,
         "sales_sum": sales_products[0].sales_sum,
-        "sales_mean": sales_products[0].sales_mean,
+        "sales_mean": sales_products[0].sales_mean/sales_products_count if  sales_products[0].sales_mean else 0,
         "sales_share": sales_products[0].sales_share,
         "share_chg": sales_products[0].share_chg,
-        "volume_mean": sales_products[0].volume_mean,
-        "unit_mean": sales_products[0].unit_mean,
-        "rom_sales_chg": sales_products[0].rom_sales_chg,
+        "volume_mean": sales_products[0].volume_mean/sales_products_count if sales_products[0].volume_mean else 0,
+        "unit_mean": sales_products[0].unit_mean/sales_products_count if sales_products[0].unit_mean else 0,
+        "rom_sales_chg": sales_products[0].rom_sales_chg/sales_products_count if sales_products[0].rom_sales_chg else 0,
         "segment_sales_share": sales_products[0].segment_sales_share,
         "sales_share_change_vs_ya": sales_products[0].sales_share_change_vs_ya,
     })
 
     for i in range(len(products_segment)):
         if products_segment[i].segment != 'null':
+            sales_products_count = db.query(Stg_SalesProduct).join(Stg_Product).filter(
+                Stg_Product.segment == products_segment[i].segment,
+                Stg_Product.bu == product_term,
+                Stg_Product.category != None,
+                Stg_Product.sub_category != None).count()
+
             sales_products = db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
                                       func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
                                       func.sum(Stg_SalesProduct.sales_share).label("sales_share"),
@@ -87,13 +98,13 @@ async def root(product_term: str, db: Session = Depends(get_db)):
             data[0]['items'].append({
                 "items": [],
                 "name": products_segment[i].segment,
-                "sales_sum": sales_products[0].sales_sum,
+                "sales_sum": sales_products[0].sales_sum/sales_products_count if sales_products[0].sales_sum else 0,
                 "sales_mean": sales_products[0].sales_mean,
                 "sales_share": sales_products[0].sales_share,
                 "share_chg": sales_products[0].share_chg,
-                "volume_mean": sales_products[0].volume_mean,
-                "unit_mean": sales_products[0].unit_mean,
-                "rom_sales_chg": sales_products[0].rom_sales_chg,
+                "volume_mean": sales_products[0].volume_mean/sales_products_count if sales_products[0].volume_mean else 0,
+                "unit_mean": sales_products[0].unit_mean/sales_products_count if sales_products[0].unit_mean else 0,
+                "rom_sales_chg": sales_products[0].rom_sales_chg/sales_products_count if sales_products[0].rom_sales_chg else 0,
                 "segment_sales_share": sales_products[0].segment_sales_share,
                 "sales_share_change_vs_ya": sales_products[0].sales_share_change_vs_ya,
             })
@@ -103,6 +114,11 @@ async def root(product_term: str, db: Session = Depends(get_db)):
             Stg_Product.category).all()
 
         for j in range(len(products_category)):
+            sales_products_count = db.query(Stg_SalesProduct).join(Stg_Product).filter(
+                Stg_Product.category == products_category[j].category,
+                Stg_Product.bu == product_term,
+                Stg_Product.sub_category != None).count()
+
             sales_details = db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
                                      func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
                                      func.sum(Stg_SalesProduct.sales_share).label("sales_share"),
@@ -122,12 +138,12 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                 "items": [],
                 "name": products_category[j].category,
                 "sales_sum": sales_details[0].sales_sum,
-                "sales_mean": sales_details[0].sales_mean,
+                "sales_mean": sales_details[0].sales_mean/sales_products_count if sales_details[0].sales_mean else 0,
                 "sales_share": sales_details[0].sales_share,
                 "share_chg": sales_details[0].share_chg,
-                "volume_mean": sales_details[0].volume_mean,
-                "unit_mean": sales_details[0].unit_mean,
-                "rom_sales_chg": sales_details[0].rom_sales_chg,
+                "volume_mean": sales_details[0].volume_mean/sales_products_count if sales_details[0].volume_mean else 0,
+                "unit_mean": sales_details[0].unit_mean/sales_products_count if sales_details[0].unit_mean else 0,
+                "rom_sales_chg": sales_details[0].rom_sales_chg/sales_products_count if sales_details[0].rom_sales_chg else 0,
                 "segment_sales_share": sales_details[0].segment_sales_share,
                 "sales_share_change_vs_ya": sales_details[0].sales_share_change_vs_ya,
             })
@@ -137,6 +153,10 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                 Stg_Product.sub_category).all()
 
             for k in range(len(product_sub_category)):
+                sales_products_count = db.query(Stg_SalesProduct).join(Stg_Product).filter(
+                    Stg_Product.sub_category == product_sub_category[k].sub_category,
+                    Stg_Product.bu == product_term).count()
+
                 sales_details = db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
                                          func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
                                          func.sum(Stg_SalesProduct.sales_share).label("sales_share"),
@@ -155,12 +175,12 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                     "items": [],
                     "name": product_sub_category[k].sub_category,
                     "sales_sum": sales_details[0].sales_sum,
-                    "sales_mean": sales_details[0].sales_mean,
+                    "sales_mean": sales_details[0].sales_mean/sales_products_count if sales_details[0].sales_mean else 0,
                     "sales_share": sales_details[0].sales_share,
                     "share_chg": sales_details[0].share_chg,
-                    "volume_mean": sales_details[0].volume_mean,
-                    "unit_mean": sales_details[0].unit_mean,
-                    "rom_sales_chg": sales_details[0].rom_sales_chg,
+                    "volume_mean": sales_details[0].volume_mean/sales_products_count if sales_details[0].volume_mean else 0,
+                    "unit_mean": sales_details[0].unit_mean/sales_products_count if sales_details[0].unit_mean else 0,
+                    "rom_sales_chg": sales_details[0].rom_sales_chg/sales_products_count if sales_details[0].rom_sales_chg else 0,
                     "segment_sales_share": sales_details[0].segment_sales_share,
                     "sales_share_change_vs_ya": sales_details[0].sales_share_change_vs_ya,
                 })
