@@ -13,7 +13,10 @@
                 "sales_share": 3111.2,
                 "share_chg": 92.9999999999995,
                 "volume_mean": 4102.27,
-                "unit_mean": 4061.56
+                "unit_mean": 4061.56,
+                "rom_sales_chg": 1298.48,
+                "segment_sales_share": 1.0,
+                "sales_share_change_vs_ya": 92.9999999999995
               },
               {
                 "items": [],
@@ -23,7 +26,10 @@
                 "sales_share": 3148.5,
                 "share_chg": 104.4,
                 "volume_mean": 4040.96,
-                "unit_mean": 4508.5
+                "unit_mean": 4508.5,
+                "rom_sales_chg": 3710.97,
+                "segment_sales_share": 6.69999999999999,
+                "sales_share_change_vs_ya": 104.4
               },
               {
                 "items": [],
@@ -33,7 +39,10 @@
                 "sales_share": 4132.0,
                 "share_chg": -532.199999999999,
                 "volume_mean": -3052.71,
-                "unit_mean": -3201.08
+                "unit_mean": -3201.08,
+                "rom_sales_chg": -56.0000000000002,
+                "segment_sales_share": 0.5,
+                "sales_share_change_vs_ya": -532.199999999999
               }
             ],
             "name": "BREAD SNACKS",
@@ -42,7 +51,10 @@
             "sales_share": 10391.7,
             "share_chg": -334.8,
             "volume_mean": 5090.52,
-            "unit_mean": 5368.98
+            "unit_mean": 5368.98,
+            "rom_sales_chg": 4953.45,
+            "segment_sales_share": 8.19999999999999,
+            "sales_share_change_vs_ya": -334.8
           },
           {
             "items": [
@@ -54,7 +66,10 @@
                 "sales_share": 11670.8,
                 "share_chg": 97.0999999999999,
                 "volume_mean": 3657712.49,
-                "unit_mean": 2893280.1
+                "unit_mean": 2893280.1,
+                "rom_sales_chg": 9013.85000000001,
+                "segment_sales_share": 84.3999999999998,
+                "sales_share_change_vs_ya": 97.0999999999999
               },
               {
                 "items": [],
@@ -64,7 +79,10 @@
                 "sales_share": 2378.9,
                 "share_chg": 1487.8,
                 "volume_mean": -3688.15,
-                "unit_mean": -5417.74
+                "unit_mean": -5417.74,
+                "rom_sales_chg": -1153.24,
+                "segment_sales_share": 4.8,
+                "sales_share_change_vs_ya": 1487.8
               },
               {
                 "items": [],
@@ -74,7 +92,10 @@
                 "sales_share": 9343.09999999999,
                 "share_chg": -13.4,
                 "volume_mean": -3368.32,
-                "unit_mean": -3787.76
+                "unit_mean": -3787.76,
+                "rom_sales_chg": -1242.78,
+                "segment_sales_share": 65.0,
+                "sales_share_change_vs_ya": -13.4
               },
               {
                 "items": [],
@@ -84,7 +105,10 @@
                 "sales_share": 8025.00000000001,
                 "share_chg": 96.0999999999998,
                 "volume_mean": 8994.13,
-                "unit_mean": 8800.29999999999
+                "unit_mean": 8800.29999999999,
+                "rom_sales_chg": 6270.57000000001,
+                "segment_sales_share": 697.799999999999,
+                "sales_share_change_vs_ya": 96.0999999999998
               },
               {
                 "items": [],
@@ -94,7 +118,10 @@
                 "sales_share": 6496.80000000001,
                 "share_chg": 133.4,
                 "volume_mean": 100173.99,
-                "unit_mean": 70325.17
+                "unit_mean": 70325.17,
+                "rom_sales_chg": 3632.52,
+                "segment_sales_share": 114.899999999999,
+                "sales_share_change_vs_ya": 133.4
               }
             ],
             "name": "CRACKERS",
@@ -103,7 +130,10 @@
             "sales_share": 37914.6,
             "share_chg": 1801.0,
             "volume_mean": 3759824.14,
-            "unit_mean": 2963200.07
+            "unit_mean": 2963200.07,
+            "rom_sales_chg": 16520.92,
+            "segment_sales_share": 966.90000000001,
+            "sales_share_change_vs_ya": 1801.0
           },
           {
             "items": [
@@ -115,7 +145,10 @@
                 "sales_share": null,
                 "share_chg": null,
                 "volume_mean": null,
-                "unit_mean": null
+                "unit_mean": null,
+                "rom_sales_chg": null,
+                "segment_sales_share": null,
+                "sales_share_change_vs_ya": null
               },
               {
                 "items": [],
@@ -125,7 +158,10 @@
                 "sales_share": 9793.1,
                 "share_chg": 507.9,
                 "volume_mean": 337770.11,
-                "unit_mean": 307718.19
+                "unit_mean": 307718.19,
+                "rom_sales_chg": 972.920000000001,
+                "segment_sales_share": 3.3,
+                "sales_share_change_vs_ya": 507.9
               },
               {
                 "items": [],
@@ -135,7 +171,10 @@
                 "sales_share": 387.7,
                 "share_chg": -4.69999999999997,
                 "volume_mean": -458.11,
-                "unit_mean": -460.01
+                "unit_mean": -460.01,
+                "rom_sales_chg": -160.65,
+                "segment_sales_share": 0.0,
+                "sales_share_change_vs_ya": -4.69999999999997
               },
               {
                 "items": [],
@@ -145,7 +184,10 @@
                 "sales_share": 25962.5,
                 "share_chg": 2051.0,
                 "volume_mean": 8814.84,
-                "unit_mean": 9613.75
+                "unit_mean": 9613.75,
+                "rom_sales_chg": 3795.3,
+                "segment_sales_share": 170.2,
+                "sales_share_change_vs_ya": 2051.0
               },
               {
                 "items": [],
@@ -155,7 +197,10 @@
                 "sales_share": null,
                 "share_chg": null,
                 "volume_mean": null,
-                "unit_mean": null
+                "unit_mean": null,
+                "rom_sales_chg": null,
+                "segment_sales_share": null,
+                "sales_share_change_vs_ya": null
               },
               {
                 "items": [],
@@ -165,7 +210,10 @@
                 "sales_share": 23796.2,
                 "share_chg": 2883.7,
                 "volume_mean": 3163035.56,
-                "unit_mean": 4301335.71
+                "unit_mean": 4301335.71,
+                "rom_sales_chg": 18327.48,
+                "segment_sales_share": 24.9000000000001,
+                "sales_share_change_vs_ya": 2883.7
               }
             ],
             "name": "OTHER GRAIN SNACKS",
@@ -174,7 +222,10 @@
             "sales_share": 59939.4999999999,
             "share_chg": 5437.9,
             "volume_mean": 3509162.4,
-            "unit_mean": 4618207.64
+            "unit_mean": 4618207.64,
+            "rom_sales_chg": 22935.05,
+            "segment_sales_share": 198.399999999999,
+            "sales_share_change_vs_ya": 5437.9
           },
           {
             "items": [
@@ -186,7 +237,10 @@
                 "sales_share": 8293.80000000001,
                 "share_chg": -263.199999999999,
                 "volume_mean": 2224820.31,
-                "unit_mean": 797231.040000002
+                "unit_mean": 797231.040000002,
+                "rom_sales_chg": 9846.09999999999,
+                "segment_sales_share": 99.0999999999999,
+                "sales_share_change_vs_ya": -263.199999999999
               },
               {
                 "items": [],
@@ -196,7 +250,10 @@
                 "sales_share": 22688.7999999998,
                 "share_chg": -624.900000000003,
                 "volume_mean": 911570.09,
-                "unit_mean": 927277.14
+                "unit_mean": 927277.14,
+                "rom_sales_chg": 47142.2299999999,
+                "segment_sales_share": 3507.99999999993,
+                "sales_share_change_vs_ya": -624.900000000003
               },
               {
                 "items": [],
@@ -206,7 +263,10 @@
                 "sales_share": 31272.5,
                 "share_chg": 107.8,
                 "volume_mean": 11871.33,
-                "unit_mean": 3317.29000000001
+                "unit_mean": 3317.29000000001,
+                "rom_sales_chg": 14353.26,
+                "segment_sales_share": 597.400000000003,
+                "sales_share_change_vs_ya": 107.8
               },
               {
                 "items": [],
@@ -216,7 +276,10 @@
                 "sales_share": 5442.90000000001,
                 "share_chg": 245.1,
                 "volume_mean": 34998.62,
-                "unit_mean": 34090.4
+                "unit_mean": 34090.4,
+                "rom_sales_chg": 8740.06,
+                "segment_sales_share": 165.599999999999,
+                "sales_share_change_vs_ya": 245.1
               },
               {
                 "items": [],
@@ -226,7 +289,10 @@
                 "sales_share": 8902.50000000001,
                 "share_chg": 916.9,
                 "volume_mean": 630828.68,
-                "unit_mean": 629042.309999999
+                "unit_mean": 629042.309999999,
+                "rom_sales_chg": -783.51,
+                "segment_sales_share": 62.9000000000003,
+                "sales_share_change_vs_ya": 916.9
               },
               {
                 "items": [],
@@ -236,7 +302,10 @@
                 "sales_share": 5924.00000000003,
                 "share_chg": 799.300000000001,
                 "volume_mean": 129675319.04,
-                "unit_mean": 129632046.36
+                "unit_mean": 129632046.36,
+                "rom_sales_chg": 21668.05,
+                "segment_sales_share": 79.7999999999999,
+                "sales_share_change_vs_ya": 799.300000000001
               },
               {
                 "items": [],
@@ -246,7 +315,10 @@
                 "sales_share": 24461.7999999998,
                 "share_chg": 89.1999999999991,
                 "volume_mean": 35134938.04,
-                "unit_mean": 35216930.67
+                "unit_mean": 35216930.67,
+                "rom_sales_chg": 48464.1899999999,
+                "segment_sales_share": 2850.49999999996,
+                "sales_share_change_vs_ya": 89.1999999999991
               },
               {
                 "items": [],
@@ -256,7 +328,10 @@
                 "sales_share": 15128.5,
                 "share_chg": -226.900000000001,
                 "volume_mean": 1068090.27,
-                "unit_mean": 1371682.53
+                "unit_mean": 1371682.53,
+                "rom_sales_chg": 18503.31,
+                "segment_sales_share": 533.800000000005,
+                "sales_share_change_vs_ya": -226.900000000001
               },
               {
                 "items": [],
@@ -266,7 +341,10 @@
                 "sales_share": 29421.1999999997,
                 "share_chg": -431.4,
                 "volume_mean": 2827678.77,
-                "unit_mean": 2774189.36999999
+                "unit_mean": 2774189.36999999,
+                "rom_sales_chg": 50943.2999999999,
+                "segment_sales_share": 2050.29999999998,
+                "sales_share_change_vs_ya": -431.4
               },
               {
                 "items": [],
@@ -276,7 +354,10 @@
                 "sales_share": 17849.9,
                 "share_chg": 2010.9,
                 "volume_mean": 838983.649999999,
-                "unit_mean": 907396.660000001
+                "unit_mean": 907396.660000001,
+                "rom_sales_chg": 34401.01,
+                "segment_sales_share": 167.2,
+                "sales_share_change_vs_ya": 2010.9
               },
               {
                 "items": [],
@@ -286,7 +367,10 @@
                 "sales_share": 27898.4,
                 "share_chg": 314.100000000002,
                 "volume_mean": 916671.939999999,
-                "unit_mean": 930867.080000001
+                "unit_mean": 930867.080000001,
+                "rom_sales_chg": 4831219.04999999,
+                "segment_sales_share": 146.699999999999,
+                "sales_share_change_vs_ya": 314.100000000002
               },
               {
                 "items": [],
@@ -296,7 +380,10 @@
                 "sales_share": 33026.2999999997,
                 "share_chg": 731.7,
                 "volume_mean": 33086136.65,
-                "unit_mean": 33092657.2399999
+                "unit_mean": 33092657.2399999,
+                "rom_sales_chg": 51979.6100000001,
+                "segment_sales_share": 1798.39999999998,
+                "sales_share_change_vs_ya": 731.7
               },
               {
                 "items": [],
@@ -306,7 +393,10 @@
                 "sales_share": 34088.1,
                 "share_chg": 74.8,
                 "volume_mean": -2814.53,
-                "unit_mean": -3343.69
+                "unit_mean": -3343.69,
+                "rom_sales_chg": 8404.6,
+                "segment_sales_share": 214.2,
+                "sales_share_change_vs_ya": 74.8
               }
             ],
             "name": "SALTY SNACKS",
@@ -315,7 +405,10 @@
             "sales_share": 264398.700000009,
             "share_chg": 3743.40000000001,
             "volume_mean": 207359092.86,
-            "unit_mean": 206313384.4
+            "unit_mean": 206313384.4,
+            "rom_sales_chg": 5144881.25999998,
+            "segment_sales_share": 12273.9000000012,
+            "sales_share_change_vs_ya": 3743.40000000001
           },
           {
             "items": [
@@ -327,7 +420,10 @@
                 "sales_share": 21280.5,
                 "share_chg": 303.899999999999,
                 "volume_mean": -12119.36,
-                "unit_mean": -12421.79
+                "unit_mean": -12421.79,
+                "rom_sales_chg": 6158.06000000001,
+                "segment_sales_share": 744.799999999999,
+                "sales_share_change_vs_ya": 303.899999999999
               },
               {
                 "items": [],
@@ -337,7 +433,10 @@
                 "sales_share": 2983.3,
                 "share_chg": 471.4,
                 "volume_mean": 1815.77,
-                "unit_mean": 2531.42
+                "unit_mean": 2531.42,
+                "rom_sales_chg": -583.44,
+                "segment_sales_share": 158.0,
+                "sales_share_change_vs_ya": 471.4
               }
             ],
             "name": "DIPS",
@@ -346,7 +445,10 @@
             "sales_share": 24263.7999999999,
             "share_chg": 775.299999999997,
             "volume_mean": -10303.59,
-            "unit_mean": -9890.37
+            "unit_mean": -9890.37,
+            "rom_sales_chg": 5574.62,
+            "segment_sales_share": 902.8,
+            "sales_share_change_vs_ya": 775.299999999997
           },
           {
             "items": [
@@ -358,7 +460,10 @@
                 "sales_share": 8540.10000000002,
                 "share_chg": 2037.8,
                 "volume_mean": 98377.12,
-                "unit_mean": 47881.67
+                "unit_mean": 47881.67,
+                "rom_sales_chg": -120.529999999999,
+                "segment_sales_share": 192.1,
+                "sales_share_change_vs_ya": 2037.8
               }
             ],
             "name": "TRAIL MIX",
@@ -367,7 +472,10 @@
             "sales_share": 6740.10000000003,
             "share_chg": 237.799999999999,
             "volume_mean": 98377.12,
-            "unit_mean": 47881.67
+            "unit_mean": 47881.67,
+            "rom_sales_chg": 1679.47,
+            "segment_sales_share": 192.1,
+            "sales_share_change_vs_ya": 237.799999999999
           },
           {
             "items": [
@@ -379,7 +487,10 @@
                 "sales_share": 1215.9,
                 "share_chg": -61.1999999999999,
                 "volume_mean": -1422.92,
-                "unit_mean": -2292.44
+                "unit_mean": -2292.44,
+                "rom_sales_chg": 1146.39,
+                "segment_sales_share": 87.0999999999994,
+                "sales_share_change_vs_ya": -61.1999999999999
               }
             ],
             "name": "MEAT JERKY",
@@ -388,7 +499,10 @@
             "sales_share": 1215.9,
             "share_chg": -61.1999999999999,
             "volume_mean": -1422.92,
-            "unit_mean": -2292.44
+            "unit_mean": -2292.44,
+            "rom_sales_chg": 1146.39,
+            "segment_sales_share": 87.0999999999994,
+            "sales_share_change_vs_ya": -61.1999999999999
           },
           {
             "items": [
@@ -400,7 +514,10 @@
                 "sales_share": 653.3,
                 "share_chg": -136.399999999999,
                 "volume_mean": -964.52,
-                "unit_mean": -1034.35
+                "unit_mean": -1034.35,
+                "rom_sales_chg": -146.57,
+                "segment_sales_share": 0.0,
+                "sales_share_change_vs_ya": -136.399999999999
               },
               {
                 "items": [],
@@ -410,7 +527,10 @@
                 "sales_share": 536.4,
                 "share_chg": 183.6,
                 "volume_mean": 172.71,
-                "unit_mean": 102.12
+                "unit_mean": 102.12,
+                "rom_sales_chg": -24.4799999999999,
+                "segment_sales_share": 0.0,
+                "sales_share_change_vs_ya": 183.6
               }
             ],
             "name": "SEAFOOD SNACKS",
@@ -419,7 +539,10 @@
             "sales_share": 1189.7,
             "share_chg": 47.2000000000005,
             "volume_mean": -791.81,
-            "unit_mean": -932.230000000001
+            "unit_mean": -932.230000000001,
+            "rom_sales_chg": -171.05,
+            "segment_sales_share": 0.0,
+            "sales_share_change_vs_ya": 47.2000000000005
           },
           {
             "items": [
@@ -431,7 +554,10 @@
                 "sales_share": 2026.7,
                 "share_chg": 169.7,
                 "volume_mean": 13344.23,
-                "unit_mean": 12768.52
+                "unit_mean": 12768.52,
+                "rom_sales_chg": 5542.09,
+                "segment_sales_share": 5.6,
+                "sales_share_change_vs_ya": 169.7
               }
             ],
             "name": "ALL OTHER SAVORY",
@@ -440,7 +566,10 @@
             "sales_share": 2026.7,
             "share_chg": 169.7,
             "volume_mean": 13344.23,
-            "unit_mean": 12768.52
+            "unit_mean": 12768.52,
+            "rom_sales_chg": 5542.09,
+            "segment_sales_share": 5.6,
+            "sales_share_change_vs_ya": 169.7
           },
           {
             "items": [
@@ -452,7 +581,10 @@
                 "sales_share": 2932.5,
                 "share_chg": -132.7,
                 "volume_mean": -1364.06,
-                "unit_mean": -1149.35
+                "unit_mean": -1149.35,
+                "rom_sales_chg": 195.88,
+                "segment_sales_share": 3.7,
+                "sales_share_change_vs_ya": -132.7
               },
               {
                 "items": [],
@@ -462,7 +594,10 @@
                 "sales_share": 1696.3,
                 "share_chg": 59.7999999999996,
                 "volume_mean": 5677.37,
-                "unit_mean": 2822.93
+                "unit_mean": 2822.93,
+                "rom_sales_chg": 2437.05,
+                "segment_sales_share": 29.2,
+                "sales_share_change_vs_ya": 59.7999999999996
               }
             ],
             "name": "MICROWAVE AND KERNEL POPCORN",
@@ -471,7 +606,10 @@
             "sales_share": 4628.8,
             "share_chg": -72.9000000000004,
             "volume_mean": 4313.31,
-            "unit_mean": 1673.58
+            "unit_mean": 1673.58,
+            "rom_sales_chg": 2632.93,
+            "segment_sales_share": 32.9,
+            "sales_share_change_vs_ya": -72.9000000000004
           },
           {
             "items": [
@@ -483,7 +621,10 @@
                 "sales_share": 88.9,
                 "share_chg": -14.9,
                 "volume_mean": -679.82,
-                "unit_mean": -1562.02
+                "unit_mean": -1562.02,
+                "rom_sales_chg": 1297.98,
+                "segment_sales_share": 0.0,
+                "sales_share_change_vs_ya": -14.9
               },
               {
                 "items": [],
@@ -493,7 +634,10 @@
                 "sales_share": 5069.3,
                 "share_chg": -220.399999999999,
                 "volume_mean": -468.48,
-                "unit_mean": -668.47
+                "unit_mean": -668.47,
+                "rom_sales_chg": 2037.93,
+                "segment_sales_share": 4.9,
+                "sales_share_change_vs_ya": -220.399999999999
               },
               {
                 "items": [],
@@ -503,7 +647,10 @@
                 "sales_share": 5665.60000000001,
                 "share_chg": -60.8999999999999,
                 "volume_mean": 4390.6,
-                "unit_mean": 3391.73
+                "unit_mean": 3391.73,
+                "rom_sales_chg": 4740.51,
+                "segment_sales_share": 45.0000000000001,
+                "sales_share_change_vs_ya": -60.8999999999999
               },
               {
                 "items": [],
@@ -513,7 +660,10 @@
                 "sales_share": 5052.70000000002,
                 "share_chg": 139.799999999999,
                 "volume_mean": 77801.6899999999,
-                "unit_mean": 72666.9199999999
+                "unit_mean": 72666.9199999999,
+                "rom_sales_chg": -2888.28,
+                "segment_sales_share": 582.700000000005,
+                "sales_share_change_vs_ya": 139.799999999999
               }
             ],
             "name": "NUTS & SEEDS",
@@ -522,7 +672,10 @@
             "sales_share": 15876.5,
             "share_chg": -156.4,
             "volume_mean": 81043.9899999998,
-            "unit_mean": 73828.1599999998
+            "unit_mean": 73828.1599999998,
+            "rom_sales_chg": 5188.14000000001,
+            "segment_sales_share": 632.600000000009,
+            "sales_share_change_vs_ya": -156.4
           }
         ],
         "name": "TOTAL SAVORY",
@@ -531,7 +684,10 @@
         "sales_share": 428585.99999997,
         "share_chg": 11587.0,
         "volume_mean": 214817730.25,
-        "unit_mean": 214023197.98
+        "unit_mean": 214023197.98,
+        "rom_sales_chg": 5210883.26999998,
+        "segment_sales_share": 15300.5000000014,
+        "sales_share_change_vs_ya": 11587.0
       },
       {
         "items": [
@@ -545,7 +701,10 @@
                 "sales_share": 1899.7,
                 "share_chg": -167.1,
                 "volume_mean": 4445.38,
-                "unit_mean": 4405.22
+                "unit_mean": 4405.22,
+                "rom_sales_chg": 2412.26,
+                "segment_sales_share": 79.3000000000001,
+                "sales_share_change_vs_ya": -167.1
               },
               {
                 "items": [],
@@ -555,7 +714,10 @@
                 "sales_share": 2184.5,
                 "share_chg": 172.1,
                 "volume_mean": 18179858.75,
-                "unit_mean": 6194670.65
+                "unit_mean": 6194670.65,
+                "rom_sales_chg": 3099.12,
+                "segment_sales_share": 135.8,
+                "sales_share_change_vs_ya": 172.1
               },
               {
                 "items": [],
@@ -565,7 +727,10 @@
                 "sales_share": 3465.8,
                 "share_chg": 63.5999999999999,
                 "volume_mean": 8254.74,
-                "unit_mean": 3883.32
+                "unit_mean": 3883.32,
+                "rom_sales_chg": 2491.32,
+                "segment_sales_share": 111.8,
+                "sales_share_change_vs_ya": 63.5999999999999
               },
               {
                 "items": [],
@@ -575,7 +740,10 @@
                 "sales_share": 3052.3,
                 "share_chg": 212.4,
                 "volume_mean": 95921.6800000001,
-                "unit_mean": 127132.41
+                "unit_mean": 127132.41,
+                "rom_sales_chg": 2089.19,
+                "segment_sales_share": 113.9,
+                "sales_share_change_vs_ya": 212.4
               }
             ],
             "name": "SWEET PASTRY SNACKS",
@@ -584,7 +752,10 @@
             "sales_share": 10602.3,
             "share_chg": 281.0,
             "volume_mean": 18288480.5499999,
-            "unit_mean": 6330091.6
+            "unit_mean": 6330091.6,
+            "rom_sales_chg": 10091.89,
+            "segment_sales_share": 440.8,
+            "sales_share_change_vs_ya": 281.0
           },
           {
             "items": [
@@ -596,7 +767,10 @@
                 "sales_share": 4684.6,
                 "share_chg": -3693.2,
                 "volume_mean": -9871.62,
-                "unit_mean": -10523.1
+                "unit_mean": -10523.1,
+                "rom_sales_chg": 8289.76,
+                "segment_sales_share": 0.0,
+                "sales_share_change_vs_ya": -3693.2
               },
               {
                 "items": [],
@@ -606,7 +780,10 @@
                 "sales_share": 1778.9,
                 "share_chg": 1778.9,
                 "volume_mean": null,
-                "unit_mean": null
+                "unit_mean": null,
+                "rom_sales_chg": 624495.02,
+                "segment_sales_share": 0.0,
+                "sales_share_change_vs_ya": 1778.9
               },
               {
                 "items": [],
@@ -616,7 +793,10 @@
                 "sales_share": 779.1,
                 "share_chg": -253.6,
                 "volume_mean": 3741654.8,
-                "unit_mean": 3742041.62
+                "unit_mean": 3742041.62,
+                "rom_sales_chg": 2283.74,
+                "segment_sales_share": 26.5,
+                "sales_share_change_vs_ya": -253.6
               },
               {
                 "items": [],
@@ -626,7 +806,10 @@
                 "sales_share": 11249.4,
                 "share_chg": -11.4,
                 "volume_mean": 1108.9,
-                "unit_mean": 332.46
+                "unit_mean": 332.46,
+                "rom_sales_chg": 3310.16,
+                "segment_sales_share": 184.5,
+                "sales_share_change_vs_ya": -11.4
               }
             ],
             "name": "OTHER WHOLESOME SNACKS",
@@ -635,7 +818,10 @@
             "sales_share": 18492.0,
             "share_chg": -2179.3,
             "volume_mean": 3732892.08,
-            "unit_mean": 3731850.98
+            "unit_mean": 3731850.98,
+            "rom_sales_chg": 638378.680000001,
+            "segment_sales_share": 211.0,
+            "sales_share_change_vs_ya": -2179.3
           },
           {
             "items": [
@@ -647,7 +833,10 @@
                 "sales_share": 5114.9,
                 "share_chg": -56.7999999999999,
                 "volume_mean": 26317.74,
-                "unit_mean": 22524.22
+                "unit_mean": 22524.22,
+                "rom_sales_chg": 3459.08,
+                "segment_sales_share": 1423.1,
+                "sales_share_change_vs_ya": -56.7999999999999
               },
               {
                 "items": [],
@@ -657,7 +846,10 @@
                 "sales_share": 2796.69999999999,
                 "share_chg": -212.0,
                 "volume_mean": 592004.98,
-                "unit_mean": 721255.95
+                "unit_mean": 721255.95,
+                "rom_sales_chg": 12070.32,
+                "segment_sales_share": 414.6,
+                "sales_share_change_vs_ya": -212.0
               }
             ],
             "name": "CANDY",
@@ -666,7 +858,10 @@
             "sales_share": 7911.60000000004,
             "share_chg": -268.8,
             "volume_mean": 618322.72,
-            "unit_mean": 743780.17
+            "unit_mean": 743780.17,
+            "rom_sales_chg": 15529.4,
+            "segment_sales_share": 1837.7,
+            "sales_share_change_vs_ya": -268.8
           },
           {
             "items": [
@@ -678,7 +873,10 @@
                 "sales_share": 3369.9,
                 "share_chg": -665.1,
                 "volume_mean": -1382.07,
-                "unit_mean": -1741.52
+                "unit_mean": -1741.52,
+                "rom_sales_chg": 2980.25,
+                "segment_sales_share": 85.8,
+                "sales_share_change_vs_ya": -665.1
               },
               {
                 "items": [],
@@ -688,7 +886,10 @@
                 "sales_share": 6114.2,
                 "share_chg": 1161.2,
                 "volume_mean": 29857.51,
-                "unit_mean": 34789.41
+                "unit_mean": 34789.41,
+                "rom_sales_chg": 1690.17,
+                "segment_sales_share": 20.1,
+                "sales_share_change_vs_ya": 1161.2
               }
             ],
             "name": "CHEESE",
@@ -697,7 +898,10 @@
             "sales_share": 9484.1,
             "share_chg": 496.1,
             "volume_mean": 28475.44,
-            "unit_mean": 33047.89
+            "unit_mean": 33047.89,
+            "rom_sales_chg": 4670.42,
+            "segment_sales_share": 105.9,
+            "sales_share_change_vs_ya": 496.1
           },
           {
             "items": [
@@ -709,7 +913,10 @@
                 "sales_share": 1633.3,
                 "share_chg": -60.8,
                 "volume_mean": 2282604.67,
-                "unit_mean": 2367040.83
+                "unit_mean": 2367040.83,
+                "rom_sales_chg": 7097.53,
+                "segment_sales_share": 122.699999999999,
+                "sales_share_change_vs_ya": -60.8
               },
               {
                 "items": [],
@@ -719,7 +926,10 @@
                 "sales_share": 7875.0,
                 "share_chg": 6.70000000000028,
                 "volume_mean": 43079389.9099999,
-                "unit_mean": 25163020.8300001
+                "unit_mean": 25163020.8300001,
+                "rom_sales_chg": 23013.7299999999,
+                "segment_sales_share": 461.500000000003,
+                "sales_share_change_vs_ya": 6.70000000000028
               }
             ],
             "name": "SNACK BARS",
@@ -728,7 +938,10 @@
             "sales_share": 9508.30000000006,
             "share_chg": -54.0999999999995,
             "volume_mean": 45361994.5799999,
-            "unit_mean": 27530061.66
+            "unit_mean": 27530061.66,
+            "rom_sales_chg": 30111.2599999999,
+            "segment_sales_share": 584.200000000009,
+            "sales_share_change_vs_ya": -54.0999999999995
           },
           {
             "items": [
@@ -740,7 +953,10 @@
                 "sales_share": 7155.7000000001,
                 "share_chg": -160.900000000001,
                 "volume_mean": 12802897.84,
-                "unit_mean": 15850546.66
+                "unit_mean": 15850546.66,
+                "rom_sales_chg": 24780.8400000001,
+                "segment_sales_share": 1220.69999999999,
+                "sales_share_change_vs_ya": -160.900000000001
               },
               {
                 "items": [],
@@ -750,7 +966,10 @@
                 "sales_share": 10525.2,
                 "share_chg": -101.9,
                 "volume_mean": 24.61,
-                "unit_mean": -93.61
+                "unit_mean": -93.61,
+                "rom_sales_chg": 4571.98,
+                "segment_sales_share": 105.5,
+                "sales_share_change_vs_ya": -101.9
               }
             ],
             "name": "COOKIES/GRAHAM CRACKERS",
@@ -759,7 +978,10 @@
             "sales_share": 17680.8999999996,
             "share_chg": -262.800000000001,
             "volume_mean": 12802922.45,
-            "unit_mean": 15850453.05
+            "unit_mean": 15850453.05,
+            "rom_sales_chg": 29352.8200000001,
+            "segment_sales_share": 1326.19999999998,
+            "sales_share_change_vs_ya": -262.800000000001
           },
           {
             "items": [
@@ -771,7 +993,10 @@
                 "sales_share": 3610.8,
                 "share_chg": 1.1,
                 "volume_mean": 35661989.0,
-                "unit_mean": 35662774.38
+                "unit_mean": 35662774.38,
+                "rom_sales_chg": 3859.89,
+                "segment_sales_share": 22.6,
+                "sales_share_change_vs_ya": 1.1
               },
               {
                 "items": [],
@@ -781,7 +1006,10 @@
                 "sales_share": 2805.2,
                 "share_chg": -131.5,
                 "volume_mean": -842.43,
-                "unit_mean": -949.15
+                "unit_mean": -949.15,
+                "rom_sales_chg": 132.71,
+                "segment_sales_share": 5.2,
+                "sales_share_change_vs_ya": -131.5
               },
               {
                 "items": [],
@@ -791,7 +1019,10 @@
                 "sales_share": 8540.10000000002,
                 "share_chg": 2037.8,
                 "volume_mean": 98377.12,
-                "unit_mean": 47881.67
+                "unit_mean": 47881.67,
+                "rom_sales_chg": -120.529999999999,
+                "segment_sales_share": 192.1,
+                "sales_share_change_vs_ya": 2037.8
               }
             ],
             "name": "COATED/COVERED SNACKS",
@@ -800,7 +1031,10 @@
             "sales_share": 8216.0,
             "share_chg": 1669.6,
             "volume_mean": 35661146.57,
-            "unit_mean": 35661825.23
+            "unit_mean": 35661825.23,
+            "rom_sales_chg": 2192.6,
+            "segment_sales_share": 27.8000000000001,
+            "sales_share_change_vs_ya": 1669.6
           },
           {
             "items": [
@@ -812,7 +1046,10 @@
                 "sales_share": 4273.0,
                 "share_chg": -103.5,
                 "volume_mean": -1628.84,
-                "unit_mean": -1037.63
+                "unit_mean": -1037.63,
+                "rom_sales_chg": 415.84,
+                "segment_sales_share": 70.5,
+                "sales_share_change_vs_ya": -103.5
               }
             ],
             "name": "DRIED FRUIT",
@@ -821,7 +1058,10 @@
             "sales_share": 4273.0,
             "share_chg": -103.5,
             "volume_mean": -1628.84,
-            "unit_mean": -1037.63
+            "unit_mean": -1037.63,
+            "rom_sales_chg": 415.84,
+            "segment_sales_share": 70.5,
+            "sales_share_change_vs_ya": -103.5
           },
           {
             "items": [
@@ -833,7 +1073,10 @@
                 "sales_share": 1046.1,
                 "share_chg": -148.0,
                 "volume_mean": 4667.52,
-                "unit_mean": 4966.84
+                "unit_mean": 4966.84,
+                "rom_sales_chg": 692.96,
+                "segment_sales_share": 3.3,
+                "sales_share_change_vs_ya": -148.0
               }
             ],
             "name": "RTE SS PUDDING",
@@ -842,7 +1085,10 @@
             "sales_share": 1046.1,
             "share_chg": -148.0,
             "volume_mean": 4667.52,
-            "unit_mean": 4966.84
+            "unit_mean": 4966.84,
+            "rom_sales_chg": 692.96,
+            "segment_sales_share": 3.3,
+            "sales_share_change_vs_ya": -148.0
           }
         ],
         "name": "EXTENDED MACRO SNACKS",
@@ -851,7 +1097,10 @@
         "sales_share": 87214.3000000024,
         "share_chg": -569.799999999999,
         "volume_mean": 116497273.07,
-        "unit_mean": 89885039.79
+        "unit_mean": 89885039.79,
+        "rom_sales_chg": 731435.869999986,
+        "segment_sales_share": 4607.40000000005,
+        "sales_share_change_vs_ya": -569.799999999999
       }
     ],
     "name": "FLNA",
@@ -860,6 +1109,9 @@
     "sales_share": 515800.299999956,
     "share_chg": 11017.2,
     "volume_mean": 331315003.320001,
-    "unit_mean": 303908237.769998
+    "unit_mean": 303908237.769998,
+    "rom_sales_chg": 5942319.13999994,
+    "segment_sales_share": 19907.8999999994,
+    "sales_share_change_vs_ya": 11017.2
   }
 ]
