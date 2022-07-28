@@ -4,9 +4,14 @@ from typing import List
 from sqlalchemy.orm import Session
 from sqlalchemy.sql import func
 
-from Models import Stg_Product, Stg_SalesProduct, Base, Stg_Geography, Stg_Time
+from Models import Stg_Product, Stg_SalesProduct, Base
 import Schemas
 from database import SessionLocal, engine
+from query import (
+    get_geography_for_type,
+    get_geography_details,
+    get_geography_details_count
+)
 
 Base.metadata.create_all(bind=engine)
 app = FastAPI()
@@ -28,7 +33,7 @@ def get_db():
         db.close()
 
 
-@app.get("/getdata/{product_term}")
+@app.get("/getproductdata/{product_term}")
 async def root(product_term: str, db: Session = Depends(get_db)):
     data = []
     products_segment = db.query(Stg_Product.segment).filter(Stg_Product.bu == product_term,
@@ -186,3 +191,26 @@ async def root(product_term: str, db: Session = Depends(get_db)):
                 })
 
     return data
+
+
+@app.get("/getgeography/{geo_type}")
+async def root(geo_type: str, db: Session = Depends(get_db)):
+    data = []
+    geography_data = get_geography_for_type(db, geo_type)
+    for each_geography in geography_data:
+        geo_details_count = get_geography_details_count(db, each_geography.geography)
+        geo_details = get_geography_details(db, each_geography.geography)
+        data.append({
+            "name": each_geography.geography,
+            "sales_sum": geo_details[0].sales_sum,
+            "sales_mean": geo_details[0].sales_mean / geo_details_count if geo_details[0].sales_mean else 0,
+            "sales_share": geo_details[0].sales_share,
+            "share_chg": geo_details[0].share_chg
+        })
+
+    return data
+
+
+@app.get("/gettrademark/{trademark}")
+async def root(trademark: str, db: Session = Depends(get_db)):
+    pass
