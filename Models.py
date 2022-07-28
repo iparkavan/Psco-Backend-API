@@ -45,6 +45,7 @@ class Stg_SalesProduct(Base):
     iod = Column("IOD", DOUBLE_PRECISION)
     nod_chg = Column("NOD Chg %", DOUBLE_PRECISION)
     nod = Column("NOD", DOUBLE_PRECISION)
+    segment_sales_share_change_vs_ya = Column("Segment Sales Share Change vs YA", DOUBLE_PRECISION)
 
 
 class Stg_Geography(Base):
