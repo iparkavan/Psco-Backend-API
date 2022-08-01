@@ -60,16 +60,16 @@ class Stg_Geography(Base):
     dollar_sales = Column("Dollar Sales", String(255))
 
 
-class Stg_Time(Base):
-    __tablename__ = 'Stg_Time'
-
-    index = Column(Integer, primary_key=True, index=True)
-    time = Column("Time", String(255))
-    time_key = Column("Time Key", String(255))
-    time_desc_long = Column("Time Desc Long", String(255))
-    time_desc_short = Column("Time Desc Short", String(255))
-    ending_date = Column("Ending Date", String(255))
-    time_order = Column("Time Order", DateTime(timezone=True))
+# class Stg_Time(Base):
+#     __tablename__ = 'Stg_Time'
+#
+#     index = Column(Integer, primary_key=True, index=True)
+#     time = Column("Time", String(255))
+#     time_key = Column("Time Key", String(255))
+#     time_desc_long = Column("Time Desc Long", String(255))
+#     time_desc_short = Column("Time Desc Short", String(255))
+#     ending_date = Column("Ending Date", String(255))
+#     time_order = Column("Time Order", DateTime(timezone=True))
 
 #
 # class Stg_SalesPackSize(Base):
@@ -94,26 +94,26 @@ class Stg_Time(Base):
 #     unit_chg = Column("Unit % Chg", DOUBLE_PRECISION)
 
 
-# class Stg_SalesTrademark(Base):
-#     __tablename__ = 'Stg_SalesTrademark'
-#
-#     index = Column(Integer, primary_key=True, index=True)
-#     product = Column("Product", String(255))
-#     geography = Column("Geography", String(255))
-#     time = Column("Time", String(255))
-#     us_trademark = Column("US Trademark", String(255))
-#     us_parent_company = Column("US Parent Company", String(255))
-#     product_key = Column("Product Key", String(255))
-#     sales = Column("Sales", Integer)
-#     sales_chg = Column("Sales % Chg", DOUBLE_PRECISION)
-#     rom_sales_chg = Column("ROM Sales Chg %", DOUBLE_PRECISION)
-#     sales_share = Column("Sales Share", DOUBLE_PRECISION)
-#     sales_share_change_vs_ya = Column("Sales Share Change vs YA", DOUBLE_PRECISION)
-#     segment_sales_share = Column("Segment Sales Share", DOUBLE_PRECISION)
-#     segment_sales_share_change_vs_ya = Column("Segment Sales Share Change vs YA", DOUBLE_PRECISION)
-#     vol_chg = Column("Vol % Chg", DOUBLE_PRECISION)
-#     unit_chg = Column("Unit % Chg", DOUBLE_PRECISION)
-#     sales_filter = Column("Sales Filter", String(255))
+class Stg_SalesTrademark(Base):
+    __tablename__ = 'Stg_SalesTrademark'
+
+    index = Column(Integer, primary_key=True, index=True)
+    product = Column("Product", String(255))
+    geography = Column("Geography", String(255), ForeignKey("Stg_Geography.Geography"))
+    time = Column("Time", String(255))
+    us_trademark = Column("US Trademark", String(255))
+    us_parent_company = Column("US Parent Company", String(255))
+    product_key = Column("Product Key", String(255), ForeignKey("Stg_Product.Product Key"))
+    sales = Column("Sales", Integer)
+    sales_chg = Column("Sales % Chg", DOUBLE_PRECISION)
+    rom_sales_chg = Column("ROM Sales Chg %", DOUBLE_PRECISION)
+    sales_share = Column("Sales Share", DOUBLE_PRECISION)
+    sales_share_change_vs_ya = Column("Sales Share Change vs YA", DOUBLE_PRECISION)
+    segment_sales_share = Column("Segment Sales Share", DOUBLE_PRECISION)
+    segment_sales_share_change_vs_ya = Column("Segment Sales Share Change vs YA", DOUBLE_PRECISION)
+    vol_chg = Column("Vol % Chg", DOUBLE_PRECISION)
+    unit_chg = Column("Unit % Chg", DOUBLE_PRECISION)
+    sales_filter = Column("Sales Filter", String(255))
 #
 #
 # class Stg_Time(Base):

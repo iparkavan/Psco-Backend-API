@@ -10,7 +10,10 @@ from database import SessionLocal, engine
 from query import (
     get_geography_for_type,
     get_geography_details,
-    get_geography_details_count
+    get_geography_details_count,
+    get_all_trademark,
+    get_trade_count,
+    get_trade_details,
 )
 
 Base.metadata.create_all(bind=engine)
@@ -192,13 +195,13 @@ async def root(product_term: str, db: Session = Depends(get_db)):
     return data
 
 
-@app.get("/getgeography/{geo_type}")
-async def root(geo_type: str, db: Session = Depends(get_db)):
+@app.get("/getgeography/{geo_type}/{product_term}/{product_key}")
+async def root(geo_type: str, product_term: str, product_key: str,  db: Session = Depends(get_db)):
     data = []
     geography_data = get_geography_for_type(db, geo_type)
     for each_geography in geography_data:
-        geo_details_count = get_geography_details_count(db, each_geography.geography)
-        geo_details = get_geography_details(db, each_geography.geography)
+        geo_details_count = get_geography_details_count(db, each_geography.geography, product_term, product_key)
+        geo_details = get_geography_details(db, each_geography.geography, product_term, product_key)
         data.append({
             "name": each_geography.geography,
             "sales_sum": geo_details[0].sales_sum,
@@ -210,6 +213,19 @@ async def root(geo_type: str, db: Session = Depends(get_db)):
     return data
 
 
-@app.get("/gettrademark/{trademark}")
-async def root(trademark: str, db: Session = Depends(get_db)):
-    pass
+@app.get("/gettrademark/{product_term}/{product_key}")
+async def root(product_term: str, product_key: str,  db: Session = Depends(get_db)):
+    data = []
+    trademarks = get_all_trademark(db)
+    for each_trademark in trademarks:
+        trade_details_count = get_trade_count(db, product_term, product_key)
+        trade_details = get_trade_details(db, product_term, product_key)
+        data.append({
+            "name": each_trademark.us_trademark,
+            "sales_sum": trade_details[0].sales_sum,
+            "sales_mean": trade_details[0].sales_mean / trade_details_count if trade_details[0].sales_mean else 0,
+            "sales_share": trade_details[0].sales_share,
+            "share_chg": trade_details[0].share_chg
+        })
+
+    return data
