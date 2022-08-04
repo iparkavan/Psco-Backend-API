@@ -1,11 +1,9 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from typing import List
 from sqlalchemy.orm import Session
 from sqlalchemy.sql import func
 
 from Models import Stg_Product, Stg_SalesProduct, Base
-import Schemas
 from database import SessionLocal, engine
 from query import (
     get_geography_for_type,
@@ -14,6 +12,9 @@ from query import (
     get_all_trademark,
     get_trade_count,
     get_trade_details,
+    get_pack_size,
+    get_pack_size_count,
+    get_pack_size_details,
 )
 
 Base.metadata.create_all(bind=engine)
@@ -226,6 +227,24 @@ async def root(product_term: str, product_key: str,  db: Session = Depends(get_d
             "sales_mean": trade_details[0].sales_mean / trade_details_count if trade_details[0].sales_mean else 0,
             "sales_share": trade_details[0].sales_share,
             "share_chg": trade_details[0].share_chg
+        })
+
+    return data
+
+
+@app.get("/getpacksize/{product_term}/{product_key}")
+async def root(product_term: str, product_key: str,  db: Session = Depends(get_db)):
+    data = []
+    pack_size = get_pack_size(db, product_term, product_key)
+    for each_pack_size in pack_size:
+        pack_size_count = get_pack_size_count(db, product_term, product_key, each_pack_size.us_serving_size)
+        pack_size_details = get_pack_size_details(db, product_term, product_key, each_pack_size.us_serving_size)
+        data.append({
+            "name": each_pack_size.us_serving_size,
+            "sales_sum": pack_size_details[0].sales_sum,
+            "sales_mean": pack_size_details[0].sales_mean / pack_size_count if pack_size_details[0].sales_mean else 0,
+            "sales_share": pack_size_details[0].sales_share,
+            "share_chg": pack_size_details[0].share_chg
         })
 
     return data

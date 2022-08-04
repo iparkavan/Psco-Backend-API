@@ -1,6 +1,12 @@
 from sqlalchemy.sql import func
 
-from Models import Stg_SalesProduct, Stg_Geography, Stg_Product, Stg_SalesTrademark
+from Models import (
+    Stg_SalesProduct,
+    Stg_Geography,
+    Stg_Product,
+    Stg_SalesTrademark,
+    Stg_SalesPackSize
+)
 
 
 def get_geography_for_type(db, geo_type):
@@ -14,7 +20,7 @@ def get_geography_details_count(db, geo, product_term, product_key):
     else:
         return db.query(Stg_SalesProduct).join(Stg_Product).filter(Stg_Product.bu == product_term,
                                                                    Stg_SalesProduct.geography == geo,
-                                                                   Stg_Product.product_key ==product_key).count()
+                                                                   Stg_SalesProduct.product_key == product_key).count()
 
 
 def get_geography_details(db, geo, product_term, product_key):
@@ -23,7 +29,8 @@ def get_geography_details(db, geo, product_term, product_key):
                         func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
                         func.sum(Stg_SalesProduct.sales_share).label("sales_share"),
                         func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg")
-                        ).join(Stg_Product).filter(Stg_Product.bu == product_term, Stg_SalesProduct.geography == geo).all()
+                        ).join(Stg_Product).filter(Stg_Product.bu == product_term,
+                                                   Stg_SalesProduct.geography == geo).all()
     else:
         return db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
                         func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
@@ -31,7 +38,7 @@ def get_geography_details(db, geo, product_term, product_key):
                         func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg")
                         ).join(Stg_Product).filter(Stg_Product.bu == product_term,
                                                    Stg_SalesProduct.geography == geo,
-                                                   Stg_Product.product_key ==product_key).all()
+                                                   Stg_SalesProduct.product_key == product_key).all()
 
 
 def get_all_trademark(db):
@@ -59,4 +66,26 @@ def get_trade_details(db, product_term, product_key):
                         func.sum(Stg_SalesTrademark.sales_share).label("sales_share"),
                         func.sum(Stg_SalesTrademark.sales_share_change_vs_ya).label("share_chg")
                         ).join(Stg_Product).filter(Stg_Product.bu == product_term,
-                                                   Stg_Product.product_key == product_key).all()
+                                                   Stg_SalesTrademark.product_key == product_key).all()
+
+
+def get_pack_size(db, product_term, product_key):
+    return db.query(Stg_SalesPackSize.us_serving_size).join(Stg_Product).filter(Stg_Product.bu == product_term,
+                                                                                Stg_SalesPackSize.product_key == product_key).group_by(
+        Stg_SalesPackSize.us_serving_size).all()
+
+
+def get_pack_size_count(db, product_term, product_key, pack_size):
+    return db.query(Stg_SalesPackSize).join(Stg_Product).filter(Stg_Product.bu == product_term,
+                                                                Stg_SalesPackSize.product_key == product_key,
+                                                                Stg_SalesPackSize.us_serving_size == pack_size).count()
+
+
+def get_pack_size_details(db, product_term, product_key, pack_size):
+    return db.query(func.sum(Stg_SalesPackSize.sales).label("sales_sum"),
+                    func.sum(Stg_SalesPackSize.sales_chg).label("sales_mean"),
+                    func.sum(Stg_SalesPackSize.sales_share).label("sales_share"),
+                    func.sum(Stg_SalesPackSize.sales_share_change_vs_ya).label("share_chg")
+                    ).join(Stg_Product).filter(Stg_Product.bu == product_term,
+                                               Stg_SalesPackSize.product_key == product_key,
+                                               Stg_SalesPackSize.us_serving_size == pack_size).all()
