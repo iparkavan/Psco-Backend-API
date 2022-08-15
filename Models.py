@@ -28,7 +28,7 @@ class Stg_SalesProduct(Base):
     index = Column(Integer, primary_key=True, index=True)
     product = Column("Product", String(255))
     geography = Column("Geography", String(255))
-    time = Column("Time", String(255))
+    time = Column("Time", String(255), ForeignKey("Stg_Time.Time"))
     us_parent_company = Column("US Parent Company", String(255))
     product_key = Column("Product Key", String(255), ForeignKey("Stg_Product.Product Key"))
     sales = Column("Sales", DOUBLE_PRECISION)
@@ -60,16 +60,16 @@ class Stg_Geography(Base):
     dollar_sales = Column("Dollar Sales", String(255))
 
 
-# class Stg_Time(Base):
-#     __tablename__ = 'Stg_Time'
-#
-#     index = Column(Integer, primary_key=True, index=True)
-#     time = Column("Time", String(255))
-#     time_key = Column("Time Key", String(255))
-#     time_desc_long = Column("Time Desc Long", String(255))
-#     time_desc_short = Column("Time Desc Short", String(255))
-#     ending_date = Column("Ending Date", String(255))
-#     time_order = Column("Time Order", DateTime(timezone=True))
+class Stg_Time(Base):
+    __tablename__ = 'Stg_Time'
+
+    index = Column(Integer, primary_key=True, index=True)
+    time = Column("Time", String(255))
+    time_key = Column("Time Key", String(255))
+    time_desc_long = Column("Time Desc Long", String(255))
+    time_desc_short = Column("Time Desc Short", String(255))
+    ending_date = Column("Ending Date", String(255))
+    time_order = Column("Time Order", DateTime(timezone=True))
 
 
 class Stg_SalesPackSize(Base):
@@ -78,7 +78,7 @@ class Stg_SalesPackSize(Base):
     index = Column(Integer, primary_key=True, index=True)
     product = Column("Product", String(255))
     geography = Column("Geography", String(255), ForeignKey("Stg_Geography.Geography"))
-    time = Column("Time", String(255))
+    time = Column("Time", String(255), ForeignKey("Stg_Time.Time"))
     us_parent_company = Column("US Parent Company", String(255))
     us_serving_size = Column("US Serving Size", String(255))
     product_key = Column("Product Key", String(255), ForeignKey("Stg_Product.Product Key"))
@@ -100,7 +100,7 @@ class Stg_SalesTrademark(Base):
     index = Column(Integer, primary_key=True, index=True)
     product = Column("Product", String(255))
     geography = Column("Geography", String(255), ForeignKey("Stg_Geography.Geography"))
-    time = Column("Time", String(255))
+    time = Column("Time", String(255), ForeignKey("Stg_Time.Time"))
     us_trademark = Column("US Trademark", String(255))
     us_parent_company = Column("US Parent Company", String(255))
     product_key = Column("Product Key", String(255), ForeignKey("Stg_Product.Product Key"))
@@ -114,15 +114,3 @@ class Stg_SalesTrademark(Base):
     vol_chg = Column("Vol % Chg", DOUBLE_PRECISION)
     unit_chg = Column("Unit % Chg", DOUBLE_PRECISION)
     sales_filter = Column("Sales Filter", String(255))
-#
-#
-# class Stg_Time(Base):
-#     __tablename__ = 'Stg_Time'
-#
-#     index = Column(Integer, primary_key=True, index=True)
-#     time = Column("Time", String(255))
-#     time_key = Column("Time Key", String(255))
-#     time_desc_long = Column("Time Desc Long", String(255))
-#     time_desc_short = Column("Time Desc Short", String(255))
-#     ending_date = Column("Ending Date", String(255))
-#     time_order = Column("Time Order", DateTime(timezone=True))
