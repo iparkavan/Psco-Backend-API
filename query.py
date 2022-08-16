@@ -47,7 +47,11 @@ def get_geography_details(db, geo, product_term, product_key, time_period):
 
 
 def get_all_trademark(db, product_term, time_period):
-    return db.query(Stg_SalesTrademark.us_trademark).join(Stg_Product).join(Stg_Time).filter(Stg_Product.bu == product_term, Stg_Time.time_desc_short == time_period).group_by(Stg_SalesTrademark.us_trademark).all()
+    return db.query(Stg_SalesTrademark.us_trademark).\
+        join(Stg_Product).join(Stg_Time).filter(
+        Stg_Product.bu == product_term,
+        Stg_Time.time_desc_short == time_period).\
+        group_by(Stg_SalesTrademark.us_trademark).limit(10).all() # limits added
 
 
 def get_trade_count(db, product_term, product_key, time_period):
@@ -101,3 +105,15 @@ def get_pack_size_details(db, product_term, product_key, pack_size, time_period)
                                                Stg_SalesPackSize.product_key == product_key,
                                                Stg_SalesPackSize.us_serving_size == pack_size,
                                                Stg_Time.time_desc_short == time_period).all()
+
+
+def get_competitor(db, product_term, product_key, time_period, geo_type):
+    return db.query(Stg_SalesProduct.us_parent_company,
+                    Stg_SalesProduct.sales,
+                    Stg_SalesProduct.sales_chg,
+                    Stg_SalesProduct.sales_share,
+                    Stg_SalesProduct.sales_share_change_vs_ya
+                    ).join(Stg_Product).join(Stg_Time).filter(Stg_Product.bu == product_term,
+                                                              Stg_SalesProduct.product_key == product_key,
+                                                              Stg_SalesProduct.geography == geo_type,
+                                                              Stg_Time.time_desc_short == time_period).all()

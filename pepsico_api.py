@@ -15,6 +15,7 @@ from query import (
     get_pack_size,
     get_pack_size_count,
     get_pack_size_details,
+    get_competitor,
 )
 
 Base.metadata.create_all(bind=engine)
@@ -256,3 +257,8 @@ async def root(product_term: str, product_key: str, time_period: str = 'L1W', db
         })
 
     return data
+
+
+@app.get("/getcompetitor/{product_term}/{product_key}/{time_period}/{geo_type}")
+async def root(product_term: str, product_key: str, time_period: str, geo_type: str, db: Session = Depends(get_db)):
+    return get_competitor(db, product_term, product_key, time_period, geo_type)
