@@ -41,13 +41,12 @@ def get_db():
 @app.get("/getproductdata/{product_term}/{time_period}")
 async def root(product_term: str, time_period: str = 'L1W', db: Session = Depends(get_db)):
     data = []
-    products_segment = db.query(Stg_Product.segment).filter(Stg_Product.bu == product_term,
-                                                            Stg_Product.segment != None).group_by(
+    products_segment = db.query(Stg_Product.segment).filter(Stg_Product.bu == product_term).group_by(
         Stg_Product.segment).all()
 
     sales_products_count = db.query(Stg_SalesProduct.index).join(Stg_Product).join(Stg_Time).filter(
         Stg_Product.bu == product_term,
-        Stg_Product.segment != None,
+        # Stg_Product.segment != None,
         Stg_Product.category != None,
         Stg_Product.sub_category != None,
         Stg_Time.time_desc_short == time_period).count()
@@ -63,10 +62,11 @@ async def root(product_term: str, time_period: str = 'L1W', db: Session = Depend
                               func.sum(Stg_SalesProduct.segment_sales_share_change_vs_ya).label("segment_sales_share_change_vs_ya"),
                               ).join(Stg_Product).join(Stg_Time).filter(
         Stg_Product.bu == product_term,
-        Stg_Product.segment != None,
+        # Stg_Product.segment != None,
         Stg_Product.category != None,
         Stg_Product.sub_category != None,
         Stg_Time.time_desc_short == time_period).all()
+
 
     data.append({
         "items": [],
@@ -82,45 +82,45 @@ async def root(product_term: str, time_period: str = 'L1W', db: Session = Depend
         "segment_sales_share_change_vs_ya": sales_products[0].segment_sales_share_change_vs_ya,
     })
 
+
     for i in range(len(products_segment)):
-        if products_segment[i].segment != 'null':
-            sales_products_count = db.query(Stg_SalesProduct.index).join(Stg_Product).join(Stg_Time).filter(
-                Stg_Product.segment == products_segment[i].segment,
-                Stg_Product.bu == product_term,
-                Stg_Product.category != None,
-                Stg_Product.sub_category != None,
-                Stg_Time.time_desc_short == time_period).count()
+        sales_products_count = db.query(Stg_SalesProduct.index).join(Stg_Product).join(Stg_Time).filter(
+            Stg_Product.segment == products_segment[i].segment,
+            Stg_Product.bu == product_term,
+            Stg_Product.category != None,
+            Stg_Product.sub_category != None,
+            Stg_Time.time_desc_short == time_period).count()
 
-            sales_products = db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
-                                      func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
-                                      func.sum(Stg_SalesProduct.sales_share).label("sales_share"),
-                                      func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg"),
-                                      func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
-                                      func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
-                                      func.sum(Stg_SalesProduct.rom_sales_chg).label("rom_sales_chg"),
-                                      func.sum(Stg_SalesProduct.segment_sales_share).label("segment_sales_share"),
-                                      func.sum(Stg_SalesProduct.segment_sales_share_change_vs_ya).label(
-                                          "segment_sales_share_change_vs_ya"),
-                                      ).join(Stg_Product).join(Stg_Time).filter(
-                Stg_Product.segment == products_segment[i].segment,
-                Stg_Product.bu == product_term,
-                Stg_Product.category != None,
-                Stg_Product.sub_category != None,
-                Stg_Time.time_desc_short == time_period).all()
+        sales_products = db.query(func.sum(Stg_SalesProduct.sales).label("sales_sum"),
+                                  func.sum(Stg_SalesProduct.sales_chg).label("sales_mean"),
+                                  func.sum(Stg_SalesProduct.sales_share).label("sales_share"),
+                                  func.sum(Stg_SalesProduct.sales_share_change_vs_ya).label("share_chg"),
+                                  func.sum(Stg_SalesProduct.volume_chg).label("volume_mean"),
+                                  func.sum(Stg_SalesProduct.unit_chg).label("unit_mean"),
+                                  func.sum(Stg_SalesProduct.rom_sales_chg).label("rom_sales_chg"),
+                                  func.sum(Stg_SalesProduct.segment_sales_share).label("segment_sales_share"),
+                                  func.sum(Stg_SalesProduct.segment_sales_share_change_vs_ya).label(
+                                      "segment_sales_share_change_vs_ya"),
+                                  ).join(Stg_Product).join(Stg_Time).filter(
+            Stg_Product.segment == products_segment[i].segment,
+            Stg_Product.bu == product_term,
+            Stg_Product.category != None,
+            Stg_Product.sub_category != None,
+            Stg_Time.time_desc_short == time_period).all()
 
-            data[0]['items'].append({
-                "items": [],
-                "name": products_segment[i].segment,
-                "sales_sum": sales_products[0].sales_sum/sales_products_count if sales_products[0].sales_sum else 0,
-                "sales_mean": sales_products[0].sales_mean,
-                "sales_share": sales_products[0].sales_share,
-                "share_chg": sales_products[0].share_chg,
-                "volume_mean": sales_products[0].volume_mean/sales_products_count if sales_products[0].volume_mean else 0,
-                "unit_mean": sales_products[0].unit_mean/sales_products_count if sales_products[0].unit_mean else 0,
-                "rom_sales_chg": sales_products[0].rom_sales_chg/sales_products_count if sales_products[0].rom_sales_chg else 0,
-                "segment_sales_share": sales_products[0].segment_sales_share,
-                "segment_sales_share_change_vs_ya": sales_products[0].segment_sales_share_change_vs_ya,
-            })
+        data[0]['items'].append({
+            "items": [],
+            "name": products_segment[i].segment if products_segment[i].segment else 'Unknown segment',
+            "sales_sum": sales_products[0].sales_sum/sales_products_count if sales_products[0].sales_sum else 0,
+            "sales_mean": sales_products[0].sales_mean,
+            "sales_share": sales_products[0].sales_share,
+            "share_chg": sales_products[0].share_chg,
+            "volume_mean": sales_products[0].volume_mean/sales_products_count if sales_products[0].volume_mean else 0,
+            "unit_mean": sales_products[0].unit_mean/sales_products_count if sales_products[0].unit_mean else 0,
+            "rom_sales_chg": sales_products[0].rom_sales_chg/sales_products_count if sales_products[0].rom_sales_chg else 0,
+            "segment_sales_share": sales_products[0].segment_sales_share,
+            "segment_sales_share_change_vs_ya": sales_products[0].segment_sales_share_change_vs_ya,
+        })
 
         products_category = db.query(Stg_Product.category).filter(Stg_Product.segment == products_segment[i].segment,
                                                                   Stg_Product.category != None).group_by(
